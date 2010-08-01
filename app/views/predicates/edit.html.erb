@@ -1,0 +1,14 @@
+<h3><%=  @predicate.name %></h3>
+<br/>
+<% form_tag :action => "update" do %>
+  <%= hidden_field_tag "predicate[uri]",@predicate.uri  %>
+  
+  <p>range:</p>
+  <p><%= text_field_tag "predicate[rdfs_range]",@predicate.rdfs_range.first.try(:uri),:size => "70" %></p>
+  
+  <p>domain</p>
+  <p><%= text_field_tag "predicate[rdfs_domain]",@predicate.rdfs_domain.first.try(:uri),:size => "70" %></p>
+  <br/>
+  <%= submit_tag %>
+  
+<% end %>

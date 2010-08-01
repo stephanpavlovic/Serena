@@ -1,0 +1,10 @@
+http://192.168.56.101:36740/openrdf-sesame:
+  writable : false
+  repository : miwiki
+  default : false
+  type : sesame
+http://192.168.56.101:36740/openrdf-sesame:
+  writable : true
+  repository : details
+  default : true
+  type : sesame  

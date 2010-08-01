@@ -1,0 +1,11 @@
+<% content_for :sidebar do %>
+  Hallo
+<% end %>
+
+<h3>
+  <%= @user.name %> <%= link_to image_tag('edit.png',:width => "16"),:action => "edit",:uri => @user.uri %>
+</h3>
+
+
+
+

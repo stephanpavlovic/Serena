@@ -1,0 +1,11 @@
+<% value = @project.send(dynamic_view) %>
+<% unless value.empty?  %>
+
+  <h4><%= select_german(SemanticRecord::Base.new(dynamic_view.expand).rdfs_label) %></h4>
+  <ul>
+    <% value.each do |repo| %>
+     <li><%= repo.class == String ? repo : repo.try(:uri) %></li>
+    <% end  %>
+  </ul>
+<% end %>  
+  

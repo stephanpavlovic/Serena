@@ -1,0 +1,35 @@
+<% form_tag "create" do %>
+  <fieldset>
+    <legend>Basics</legend>
+    <p>
+      <%= label_tag "Titel" %>
+      <%= hidden_field_tag "project[rdf_type]", Project.uri  %>
+      <%= text_field_tag "project[rdfs_label]",nil,:size => "80"  %>
+    
+    </p>  
+    
+    <p>
+      <%= label_tag "Student" %>
+      <%= text_field_tag "project[wiki_Attribut3AHatMitglied]",nil,:size => "80" %>
+    
+    </p>  
+    
+  </fieldset>
+  <br/>
+  <fieldset>
+    <legend>Literatur <%= link_to 's',:controller => "predicates", :action => "show",:uri => "wiki_Attribut3AHatLiteratur".expand %></legend>
+    <%= collection_select("project","wiki_Attribut3AHatLiteratur",@references,:uri,:title,{}, {:multiple=>'multiple',:size => "10" } ) %>  
+  </fieldset>
+  <br/>
+  <fieldset>
+    <legend>Forschungsgebiete</legend>
+    <%= render "share/research" %>
+    
+    
+    <p><%= link_to_add_fields("add") %></p>
+  </fieldset>
+  
+  <p>
+    <%= submit_tag "speichern" %>
+  </p>
+<% end %>

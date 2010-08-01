@@ -1,0 +1,10 @@
+<table>
+<% @users.each do |user| %>
+  <tr>
+    <td>
+      <h4><%= link_to user .rdfs_label, {:action => "show", :uri => user.uri} %></h4>
+
+    </td>
+  </tr>  
+<%- end -%>
+</table>

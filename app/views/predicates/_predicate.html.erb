@@ -1,0 +1,9 @@
+<ul>
+  <% unless @attributes[:value].empty? %>
+    <% @attributes[:value].each do |attribute| %>
+      <li><%= link_to(attribute.attribute("http://www.w3.org/2000/01/rdf-schema#label")[:value].delete_if{|x| x =~ /ACM : acm-classification.owl/ },{:controller => "generic",:action => "show", :uri => attribute.uri}) %></li>
+    <% end %>
+  <% else %>
+    <li>keine</li>
+  <% end %>  
+</ul>

@@ -1,0 +1,14 @@
+<h1>Listing classifications</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @concepts.each do |classification| %>
+  <tr>
+    <td><%= link_to classification.rdfs_label, {:action => "show", :uri => classification.uri} %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

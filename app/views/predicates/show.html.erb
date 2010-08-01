@@ -1,0 +1,3 @@
+<h3><%= @predicate.name %> <%= link_to image_tag('edit.png',:width => "16"),:action => "edit",:uri => @predicate.uri %></h3>
+<p>range: <%= @predicate.rdfs_range.collect{|range| range.uri}.join(", ") %></p>
+<p>domain: <%= @predicate.rdfs_domain.collect{|domain| domain.uri}.join(", ") %></p>

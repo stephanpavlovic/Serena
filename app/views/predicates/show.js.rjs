@@ -1,0 +1,4 @@
+page.hide("ajax")
+visual_effect(:highlight,:after_load_content)
+page.replace_html "after_load_content", :partial => "predicate"
+page.replace_html "triplecount", :partial => "share/triplecounter"

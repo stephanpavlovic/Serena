@@ -1,0 +1,12 @@
+<h1>Editing classification</h1>
+
+<% form_for(@classification) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @classification %> |
+<%= link_to 'Back', classifications_path %>

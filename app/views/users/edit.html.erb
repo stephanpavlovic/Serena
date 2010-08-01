@@ -1,0 +1,29 @@
+<h3><%=  @project.rdfs_label %></h3>
+<br/>
+<% form_tag :action => "update" do %>
+  <fieldset>
+    <legend>Basics</legend>
+    <%= hidden_field_tag "project[uri]",@project.uri%>
+    <%= text_field_tag "project[rdfs_label]",@project.rdfs_label,:size => "80" %>
+    <br />
+
+    <%= text_area_tag "project[wiki_Attribut3AHatBeschreibung]",@project.wiki_Attribut3AHatBeschreibung, :rows => "5", :cols => "40"  %>
+    <br />
+    <% @project.wiki_Attribut3AHatMitglied.each do |student| %>
+      <%= text_field_tag "project[wiki_Attribut3AHatMitglied]",student.uri, :size => "80" %><br/>
+    <% end %>
+    
+    <%= render :partial => 'dynamic_attribute' %>
+    
+    
+  </fieldset>
+  <br/>
+  <fieldset>
+    <legend>Literatur <%= link_to 's',:controller => "predicates", :action => "show",:uri => "wiki_Attribut3AHatLiteratur".expand %></legend>    
+    <%= collection_select("project","wiki_Attribut3AHatLiteratur",@references,:uri,:title,{:selected => @project.wiki_Attribut3AHatLiteratur.map(&:uri)}, {:multiple=>'multiple',:size => "10" } ) %>  
+  </fieldset>
+    
+  <br />
+  <%= submit_tag %>
+  
+<% end %>

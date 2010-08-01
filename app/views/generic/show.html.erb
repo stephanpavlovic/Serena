@@ -1,0 +1,10 @@
+<h3>
+  <%= @resource.rdfs_label %>
+</h3>
+
+<ul>
+  <% @resource.attributes.each do |attribute| %>
+    <li><%= attribute.uri %></li>
+  <% end %>
+  
+</ul>

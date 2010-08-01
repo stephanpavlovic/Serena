@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Indicator  
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20100121
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Medieninformatik</title>
+<%= stylesheet_link_tag "style" %>
+<%= javascript_include_tag :defaults%>
+
+</head>
+<body>
+  
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">Serena</a></h1>
+			<p>A Recommender Framework</p>
+		</div>
+	</div>
+	</div>
+	<!-- end #header -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+		  <%= yield %>
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+				<li>
+					<div id="search" >
+					<form method="get" action="/generic/show">
+						<div>
+							<input type="text" name="uri" id="search-text" value="" />
+							<input type="submit" id="search-submit" value="explore" />
+						</div>
+					</form>
+					</div>
+					<div style="clear: both;">&nbsp;</div>
+				</li>
+				
+				<%= yield(:sidebar) %>
+				
+				<li>
+					<h2>Statistic</h2>
+					<ul id="triplecount">
+						<%= render :partial => 'share/triplecounter' %>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+</div>
+	<div id="footer">
+
+	</div>
+	<!-- end #footer -->
+</body>
+
+
+</html>

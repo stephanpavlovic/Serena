@@ -1,0 +1,2 @@
+page.hide("ajax_similar")
+page.replace_html "similar_projects", :partial => "projects"

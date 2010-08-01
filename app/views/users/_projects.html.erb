@@ -1,0 +1,10 @@
+<ul>
+  <% unless @projects.empty? %>
+    <% @projects.each do |project| %>
+   
+      <li><%= link_to(project.rdfs_label,{:controller => "projects",:action => "show", :uri => project.uri}) %></li>
+    <% end %>
+  <% else %>
+    <li>keine</li>
+  <% end %>  
+</ul>

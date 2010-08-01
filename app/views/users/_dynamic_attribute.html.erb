@@ -1,0 +1,23 @@
+<script type="text/javascript">
+  
+  
+  function bla(element) {
+    var id = element.getValue() + ""
+    
+    $(element).next('input').setAttribute('name',"project["+id+"]")
+    
+    new Ajax.Request('/namespaces/'+id,
+		{ method:'get',
+			 contentType:"application/javascript",
+			 parameters: {id: id}
+		});
+  };
+  
+</script>
+
+<br/>
+<p>
+  <%= text_field_tag "predicate",nil,:onchange => "bla(this);"%>
+  <%= text_field_tag "unknown",nil,:id => "dynamic_predicate" %>
+  <div id="namespace"></div>
+</p>
